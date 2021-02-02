@@ -1,5 +1,4 @@
 use std::process;
-use std::io::{self,Write};
 use std::path::Path;
 
 fn main() {
@@ -8,7 +7,6 @@ fn main() {
             let d = p.join(s);
             if d.exists() && d.is_dir() {
                 println!("{}", d.display());
-                io::stdout().flush().unwrap();
                 process::exit(0);
             }
         }
