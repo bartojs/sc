@@ -3,7 +3,7 @@ use std::path::Path;
 
 fn main() {
     for p in Path::new(".").canonicalize().unwrap().as_path().ancestors() {
-        for s in [".svn", ".git"].iter() {
+        for s in [".git", ".svn", ".pijul"].iter() {
             let d = p.join(s);
             if d.exists() && d.is_dir() {
                 println!("{}", d.display());
