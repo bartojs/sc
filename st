@@ -1,4 +1,4 @@
-if [[ "$1" == "-q" ]]
+if test "$1" = "-q"
 then
     case `sc || echo 'false'` in
       *.git) git status -s . | awk '!/\?/{print$2}' | xargs ls -1t ;;
